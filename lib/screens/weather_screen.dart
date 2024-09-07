@@ -38,15 +38,16 @@ class WeatherScreen extends StatelessWidget {
             children: [
               Text(
                 weather.cityName,
-                style: TextStyle(fontSize: 32),
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
+              SizedBox(height: 8),
               Text(
                 '$formattedDay, $formattedDate',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: Colors.grey[600]),
               ),
               Text(
                 formattedTime,
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 18, color: Colors.grey[600]),
               ),
               SizedBox(height: 20),
               // Display the weather icon here
@@ -55,17 +56,18 @@ class WeatherScreen extends StatelessWidget {
                 width: 100,
                 height: 100,
                 errorBuilder: (context, error, stackTrace) {
-                  return Icon(Icons.error); // Fallback in case the icon fails to load
+                  return Icon(Icons.error, size: 100); // Fallback in case the icon fails to load
                 },
               ),
               SizedBox(height: 20),
               Text(
                 '${weather.temperature.toInt()}°C',
-                style: TextStyle(fontSize: 64),
+                style: TextStyle(fontSize: 64, fontWeight: FontWeight.bold),
               ),
+              SizedBox(height: 8),
               Text(
                 weather.description,
-                style: TextStyle(fontSize: 24),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
               ),
               SizedBox(height: 20),
               Row(
@@ -73,22 +75,20 @@ class WeatherScreen extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Icon(CupertinoIcons.drop),
-                      SizedBox(height: 20),
-                      Text('${weather.humidity}%'),
-                      SizedBox(height: 20),
-                      Text('Humidity'),
-                      SizedBox(height: 20),
+                      Icon(CupertinoIcons.drop, size: 40),
+                      SizedBox(height: 16),
+                      Text('${weather.humidity}%', style: TextStyle(fontSize: 20)),
+                      SizedBox(height: 4),
+                      Text('Humidity', style: TextStyle(fontSize: 16)),
                     ],
                   ),
                   Column(
                     children: [
-                      Icon(CupertinoIcons.cloud_rain),
-                      SizedBox(height: 20),
-                      Text('${weather.rainChances}%'),
-                      SizedBox(height: 20),
-                      Text('Precipitation'),
-                      SizedBox(height: 20),
+                      Icon(CupertinoIcons.cloud_rain, size: 40),
+                      SizedBox(height: 16),
+                      Text('${weather.rainChances}%', style: TextStyle(fontSize: 20)),
+                      SizedBox(height: 4),
+                      Text('Precipitation', style: TextStyle(fontSize: 16)),
                     ],
                   ),
                 ],
