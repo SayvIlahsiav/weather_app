@@ -14,7 +14,7 @@ class WeatherModel {
       required this.rainChances,
       required this.weatherIcon});
 
-  factory WeatherModel.fromJSON(Map<String, dynamic> json) {
+  factory WeatherModel.fromJson(Map<String, dynamic> json) {
     return WeatherModel(
         cityName: json['name'],
         temperature: json['main']['temp'],
