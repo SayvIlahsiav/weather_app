@@ -21,6 +21,6 @@ class WeatherModel {
         description: json['weather'][0]['description'],
         humidity: json['main']['humidity'],
         rainChances: json['main']['humidity'],
-        weatherIcon: json['weather']['0']['icon']);
+        weatherIcon: json['weather'][0]['icon']);
   }
 }
