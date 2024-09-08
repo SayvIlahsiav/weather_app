@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/weather_provider.dart';
 import 'package:intl/intl.dart';
+import 'city_search_screen.dart';
 
 class WeatherScreen extends StatelessWidget {
   @override
@@ -29,7 +30,30 @@ class WeatherScreen extends StatelessWidget {
     String formattedDay = DateFormat('EEEE').format(now);
 
     return Scaffold(
-      appBar: AppBar(title: Text('Weather App')),
+      appBar: AppBar(
+        title: Text('Weather App'),
+        leading: IconButton(
+          icon: Icon(Icons.my_location),
+          onPressed: () {
+            // Call the method to refresh the current location
+            weatherProvider.fetchWeatherByCurrentLocation();
+          },
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              // Navigate to the city search screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CitySearchScreen(),
+                ),
+              );
+            },
+          ),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Center(
@@ -40,7 +64,6 @@ class WeatherScreen extends StatelessWidget {
                 weather.cityName,
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
               Text(
                 '$formattedDay, $formattedDate',
                 style: TextStyle(fontSize: 18, color: Colors.grey[600]),
@@ -49,7 +72,6 @@ class WeatherScreen extends StatelessWidget {
                 formattedTime,
                 style: TextStyle(fontSize: 18, color: Colors.grey[600]),
               ),
-              SizedBox(height: 20),
               // Display the weather icon here
               Image.network(
                 iconUrl,
@@ -59,17 +81,14 @@ class WeatherScreen extends StatelessWidget {
                   return Icon(Icons.error, size: 100); // Fallback in case the icon fails to load
                 },
               ),
-              SizedBox(height: 20),
               Text(
                 '${weather.temperature.toInt()}°C',
                 style: TextStyle(fontSize: 64, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 8),
               Text(
                 weather.description,
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
               ),
-              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
