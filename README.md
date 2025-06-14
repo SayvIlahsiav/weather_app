@@ -24,9 +24,13 @@ A simple weather application built with Flutter that fetches and displays curren
 
 ## Screenshots
 
-| Weather Screen | City Search Screen |
-| -------------- | ------------------ |
-| ![Weather Screen](path_to_screenshot1) | ![City Search Screen](path_to_screenshot2) |
+|                      Weather Screen                      |                        City Search Screen                        |
+|:--------------------------------------------------------:|:----------------------------------------------------------------:|
+| ![Weather Screen](assets/screenshots/weather_screen.png) | ![City Search Screen](assets/screenshots/city_search_screen.png) |
+
+|                    Home Screen                     |                          Location Access Request Dialog                          |
+|:--------------------------------------------------:|:--------------------------------------------------------------------------------:|
+| ![Home Screen](assets/screenshots/home_screen.png) | ![Location Access Dialog](assets/screenshots/location_access_request_dialog.png) |
 
 ## Technologies Used
 
