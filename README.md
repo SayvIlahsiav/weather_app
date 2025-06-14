@@ -7,6 +7,7 @@ A simple weather application built with Flutter that fetches and displays curren
 
 - [Features](#features)
 - [Screenshots](#screenshots)
+- [APK](#apk)
 - [Technologies Used](#technologies-used)
 - [Setup and Installation](#setup-and-installation)
 - [Usage](#usage)
@@ -31,6 +32,9 @@ A simple weather application built with Flutter that fetches and displays curren
 |                    Home Screen                     |                          Location Access Request Dialog                          |
 |:--------------------------------------------------:|:--------------------------------------------------------------------------------:|
 | ![Home Screen](assets/screenshots/home_screen.png) | ![Location Access Dialog](assets/screenshots/location_access_request_dialog.png) |
+
+## APK
+- [weather_app_v0.1.0-pre.apk](https://github.com/SayvIlahsiav/weather_app/releases/download/v0.1.0-pre/weather_app_v0.1.0-pre.apk)
 
 ## Technologies Used
 
